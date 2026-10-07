@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Хочу сбываться</title>
+<meta name="description" content="Интерактивный конспект подкаста InTreatment о самореализации: что значит сбываться, как понять, что дело ваше, и что помогает сделать первый шаг">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Хочу сбываться - конспект подкаста InTreatment">
+<meta property="og:description" content="Анастасия Васильева и Дарья Микула о самореализации: как отличить свое от чужого и перевести идею в действие">
+<meta property="og:locale" content="ru_RU">
+<meta name="theme-color" content="#FFFFFF">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+/* Layout: редакционный конспект - узкая колонка чтения, чередование белых и кремовых секций, пастельные карточки как «рабочие листы» */
+:root{
+  --bg:#FFFFFF;
+  --bg-alt:#FAF9F7;
+  --ink:#2D2C2A;
+  --ink-strong:#1A1816;
+  --muted:#6E6A64;
+  --line:#E6E1DA;
+  --mint:#E2E9E9;
+  --beige:#EFE9E3;
+  --lav:#E7E4EE;
+  --btn-bg:#2D2C2A;
+  --btn-fg:#FFFFFF;
+  --cta-bg:#2D2C2A;
+  --cta-fg:#FAF9F7;
+  --cta-muted:#BDB7AE;
+  --focus:#7C8F8F;
+  --font-display:"Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body:"Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --gutter:clamp(20px,5vw,40px);
+  --step--1:.8125rem; --step-0:1rem; --step-1:1.125rem; --step-2:1.5rem; --step-3:2.125rem; --step-4:clamp(2.5rem,7vw,4.25rem);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1A1816; --bg-alt:#211F1C; --ink:#E9E5DF; --ink-strong:#F6F3EE; --muted:#A39D94; --line:#3A3632;
+    --mint:#27302F; --beige:#2F2A25; --lav:#2B2832; --btn-bg:#F1EDE7; --btn-fg:#1A1816;
+    --cta-bg:#2A2724; --cta-fg:#F6F3EE; --cta-muted:#A39D94; --focus:#9FB3B3; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1A1816; --bg-alt:#211F1C; --ink:#E9E5DF; --ink-strong:#F6F3EE; --muted:#A39D94; --line:#3A3632;
+  --mint:#27302F; --beige:#2F2A25; --lav:#2B2832; --btn-bg:#F1EDE7; --btn-fg:#1A1816;
+  --cta-bg:#2A2724; --cta-fg:#F6F3EE; --cta-muted:#A39D94; --focus:#9FB3B3; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;color:var(--ink-strong);text-wrap:balance;margin:0;line-height:1.15}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:6px}
+.wrap{max-width:calc(720px + 2*var(--gutter));margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* progress */
+.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:20;padding-top:env(safe-area-inset-top,0px);pointer-events:none}
+.progress span{display:block;height:3px;width:0;background:var(--ink)}
+
+/* hero */
+.hero{padding-block:clamp(48px,9vw,88px) clamp(40px,6vw,64px);border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;gap:24px}
+.hero h1{font-size:var(--step-4);letter-spacing:-.01em}
+.hero h1 em{font-style:italic}
+.lead{font-size:var(--step-1);color:var(--ink)}
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px}
+.person{display:flex;gap:12px;align-items:center;padding:10px 18px 10px 10px;border:1px solid var(--line);border-radius:999px;min-width:0}
+.ava{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-size:var(--step-1);color:var(--ink-strong)}
+.ava.m{background:var(--mint)} .ava.l{background:var(--lav)}
+.person small{display:block;color:var(--muted);font-size:var(--step--1);line-height:1.3}
+.person b{font-weight:500;line-height:1.3;display:block}
+/* pull quotes: centered, framed by hairlines, full column width */
+.pull{text-align:center;font-family:var(--font-display);font-size:clamp(1.3rem,3vw,1.625rem);line-height:1.4;color:var(--ink-strong);text-wrap:balance;padding:28px clamp(0px,4vw,40px);border-block:1px solid var(--line)}
+.pull-hero{font-style:italic;font-size:clamp(1.45rem,3.6vw,1.95rem);margin-top:8px}
+
+/* nav */
+.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.toc .wrap{max-width:1080px;display:flex;gap:8px;overflow-x:auto;padding-block:12px;scrollbar-width:none}
+.toc .wrap>a:first-child{margin-left:auto}
+.toc .wrap>a:last-child{margin-right:auto}
+.toc.scrolls .wrap{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 var(--gutter),#000 calc(100% - 48px),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 var(--gutter),#000 calc(100% - 48px),transparent 100%)}
+.toc .wrap::-webkit-scrollbar{display:none}
+.toc a{flex:none;text-decoration:none;font-size:var(--step--1);padding:7px 14px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap;transition:background .2s,color .2s}
+.toc a.on{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+
+/* sections */
+section.block{padding-block:clamp(48px,8vw,80px);scroll-margin-top:60px}
+section.block:nth-of-type(even){background:var(--bg-alt)}
+.sec-head{display:grid;gap:10px}
+.sec-head h2{font-size:var(--step-3)}
+.prose{display:grid;gap:16px}
+.stack{display:grid;gap:32px}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
+.card{padding:24px;border-radius:16px;display:grid;gap:8px;align-content:start;min-width:0}
+.card h3{font-size:var(--step-1);font-family:var(--font-body);font-weight:500;color:var(--ink-strong)}
+.c-m{background:var(--mint)} .c-b{background:var(--beige)} .c-l{background:var(--lav)}
+.card .tag{font-size:var(--step--1);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* cycle */
+.cycle{display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:32px;align-items:center}
+@media (max-width:640px){.cycle{grid-template-columns:1fr;gap:20px}.cycle svg{max-width:260px;margin-inline:auto}}
+.cycle svg{width:100%;height:auto;display:block}
+.ring{fill:none;stroke:var(--line);stroke-width:1.5}
+.ring-flow{fill:none;stroke:var(--muted);stroke-width:1.5;stroke-dasharray:2 10;stroke-linecap:round;animation:flow 14s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-240}}
+.node{cursor:pointer}
+.node circle{fill:var(--bg);stroke:var(--ink);stroke-width:1.5;transition:fill .2s}
+.node text.n{fill:var(--ink-strong);font-family:var(--font-display);font-size:18px;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.node.on circle{fill:var(--ink)}
+.node.on text.n{fill:var(--bg)}
+.node-label{fill:var(--ink);font-size:13px;text-anchor:middle;font-family:var(--font-body)}
+.center-t{fill:var(--muted);font-size:12px;text-anchor:middle;font-family:var(--font-body)}
+.center-b{fill:var(--ink-strong);font-size:15px;text-anchor:middle;font-family:var(--font-display);font-style:italic}
+.phase-panel{padding:24px;border-radius:16px;background:var(--beige);display:grid;gap:10px;min-height:220px;align-content:start}
+.phase-panel h3{font-size:var(--step-2)}
+.phase-btns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:4px}
+.chipbtn{font:inherit;font-size:var(--step--1);padding:7px 4px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.chipbtn[aria-pressed="true"]{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+
+/* acorn compare */
+.compare{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
+.compare .card p{color:var(--ink)}
+
+/* questions */
+.q{border:1px solid var(--line);border-radius:16px;background:var(--bg);overflow:hidden}
+section.block:nth-of-type(odd) .q{background:var(--bg-alt)}
+.q-head{display:flex;gap:16px;align-items:baseline;padding:20px 24px;cursor:pointer;width:100%;text-align:left;background:none;border:0;font:inherit;color:inherit}
+.q-num{font-family:var(--font-display);font-size:var(--step-3);line-height:1;color:var(--muted);flex:none;width:1.4em}
+.q-title{font-family:var(--font-display);font-size:var(--step-2);line-height:1.25;color:var(--ink-strong);flex:1;min-width:0}
+.q-sign{flex:none;font-size:22px;color:var(--muted);transition:transform .25s}
+.q.open .q-sign{transform:rotate(45deg)}
+.q-body{padding:0 24px 24px 88px;display:grid;gap:12px}
+@media (max-width:560px){.q-body{padding-left:24px}}
+.q-body .ex{font-size:.95rem;color:var(--muted)}
+textarea{width:100%;min-height:84px;font:inherit;font-size:.95rem;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);resize:vertical}
+.saved{font-size:var(--step--1);color:var(--muted)}
+
+/* self-check */
+.check{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px}
+.col{display:grid;gap:10px;align-content:start}
+.col h3{font-size:var(--step-1)}
+.sig{display:flex;gap:12px;align-items:flex-start;text-align:left;font:inherit;font-size:.95rem;line-height:1.45;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s}
+.sig .box{flex:none;width:18px;height:18px;margin-top:2px;border-radius:5px;border:1.5px solid var(--muted);display:grid;place-items:center}
+.sig[aria-pressed="true"]{border-color:var(--ink)}
+.sig.mine[aria-pressed="true"]{background:var(--mint)}
+.sig.notmine[aria-pressed="true"]{background:var(--beige)}
+.sig[aria-pressed="true"] .box{background:var(--ink);border-color:var(--ink)}
+.sig[aria-pressed="true"] .box::after{content:"";width:8px;height:4px;border-left:2px solid var(--bg);border-bottom:2px solid var(--bg);transform:rotate(-45deg) translate(1px,-1px)}
+.verdict{padding:24px;border-radius:16px;background:var(--lav);display:grid;gap:6px}
+.verdict b{font-family:var(--font-display);font-weight:400;font-size:var(--step-2);color:var(--ink-strong)}
+.meter{display:flex;height:6px;border-radius:999px;overflow:hidden;background:var(--bg);margin-top:6px}
+.meter i{display:block;height:100%;transition:width .3s}
+.meter .a{background:var(--ink)} .meter .b{background:var(--muted);opacity:.5}
+.note{font-size:var(--step--1);color:var(--muted)}
+
+/* rationalizations */
+.rats{display:grid;gap:10px}
+.rat{border:1px solid var(--line);border-radius:14px;background:var(--bg);transition:background .25s,border-color .25s}
+.rat.open{background:var(--lav);border-color:var(--lav)}
+.rat-head{width:100%;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 20px;padding:18px 24px;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer;border-radius:14px}
+.rat-head .say{font-family:var(--font-display);font-style:italic;font-size:1.25rem;line-height:1.3;color:var(--ink-strong);min-width:0}
+.rat-cue{flex:none;display:inline-flex;align-items:center;gap:10px;font-size:var(--step--1);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.rat-cue .sign{font-size:20px;line-height:1;transition:transform .25s}
+.rat.open .rat-cue .sign{transform:rotate(45deg)}
+.rat-body{padding:0 24px 20px}
+
+/* practices */
+.practice{display:grid;grid-template-columns:40px minmax(0,1fr);gap:18px;align-items:start;padding-block:22px;border-top:1px solid var(--line)}
+.practice:last-child{border-bottom:1px solid var(--line)}
+.practice .ic{width:40px;height:40px;border-radius:50%;display:grid;place-items:center}
+.practice h3{font-family:var(--font-body);font-size:var(--step-1);font-weight:500;min-height:40px;display:flex;align-items:center;margin-bottom:4px}
+.practice p{color:var(--ink)}
+.practice .try{margin-top:8px;font-size:.95rem;color:var(--muted)}
+.practice .try b{color:var(--ink);font-weight:500}
+.mark{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font:inherit;font-size:var(--step--1);padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.mark[aria-pressed="true"]{background:var(--btn-bg);color:var(--btn-fg);border-color:var(--btn-bg)}
+
+/* quotes */
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px}
+blockquote{margin:0;padding:clamp(28px,5vw,40px) clamp(24px,4vw,36px);border-radius:16px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;text-align:center}
+blockquote p{flex:1;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-style:italic;font-size:clamp(1.3rem,2.6vw,1.5rem);line-height:1.35;color:var(--ink-strong);text-wrap:balance}
+blockquote cite{font-style:normal;font-size:var(--step--1);color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+
+/* takeaway */
+.takeaways{counter-reset:t;display:grid;gap:0;padding:0;margin:0;list-style:none}
+.takeaways li{display:grid;grid-template-columns:2.2em minmax(0,1fr);gap:12px;align-items:baseline;padding-block:16px;border-top:1px solid var(--line)}
+.takeaways li:last-child{border-bottom:1px solid var(--line)}
+.takeaways li::before{counter-increment:t;content:counter(t);font-family:var(--font-display);font-size:var(--step-2);line-height:1.1;color:var(--muted)}
+
+/* CTA */
+.cta{background:var(--cta-bg);color:var(--cta-fg);padding-block:clamp(56px,9vw,88px)}
+.cta h2{color:var(--cta-fg);font-size:var(--step-3)}
+.cta .wrap{display:grid;gap:24px}
+.cta p:not(.eyebrow){color:var(--cta-muted);font-size:var(--step-1)}
+.cta-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px;margin-top:8px}
+.cta-card{display:grid;gap:10px;align-content:space-between;padding:24px;border-radius:16px;border:1px solid rgba(255,255,255,.14);text-decoration:none;color:var(--cta-fg);transition:background .2s}
+.cta-card:hover{background:rgba(255,255,255,.06)}
+.cta-card .t{font-family:var(--font-display);font-size:var(--step-2);line-height:1.2}
+.cta-card .d{color:var(--cta-muted);font-size:.95rem}
+.cta-card .go{display:inline-flex;align-items:center;gap:8px;font-weight:500;font-size:.95rem;margin-top:6px}
+.cta-card .go span{font-size:var(--step--1);color:var(--cta-muted);font-weight:400}
+.cta-card.primary{background:var(--cta-fg);color:var(--cta-bg);border-color:var(--cta-fg)}
+.cta-card.primary .d,.cta-card.primary .go span{color:#6E6A64}
+.cta-card.primary:hover{background:var(--cta-fg);opacity:.92}
+.foot{padding-block:28px;font-size:var(--step--1);color:var(--muted)}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media (prefers-reduced-motion: reduce){.ring-flow{animation:none}*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="progress" aria-hidden="true"><span id="bar"></span></div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Подкаст InTreatment · Конспект выпуска</p>
+    <h1>Хочу <em>сбываться</em></h1>
+    <p class="lead">Снаружи все благополучно: работа, зарплата, планы. А внутри что-то не дает покоя и хочется своего дела, проекта, идеи. Только непонятно, что именно, и почему-то все время откладывается. В этом выпуске разбираем, как отличить свое от чужого и как помочь себе сделать первый шаг</p>
+    <div class="people">
+      <div class="person"><div class="ava m">А</div><div><b>Анастасия Васильева</b><small>ведущая, сооснователь InTreatment</small></div></div>
+      <div class="person"><div class="ava l">Д</div><div><b>Дарья Микула</b><small>психолог, креативный коуч</small></div></div>
+    </div>
+    <p class="pull pull-hero">Сбываться - это не точка, до которой надо дойти. Это путь, по которому идешь, слушая свой импульс</p>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Разделы конспекта">
+  <div class="wrap">
+    <a href="#what">Сбываться</a>
+    <a href="#acorn">Желудь и дуб</a>
+    <a href="#mine">Что мое</a>
+    <a href="#check">Самопроверка</a>
+    <a href="#block">Что мешает</a>
+    <a href="#help">Что помогает</a>
+    <a href="#age">Возраст</a>
+    <a href="#sum">Главное</a>
+  </div>
+</nav>
+
+<main>
+<section class="block" id="what">
+  <div class="wrap stack">
+    <div class="sec-head"><p class="eyebrow">Часть 1</p><h2>Что значит «сбываться»</h2></div>
+    <div class="prose">
+      <p>У слова две стороны. Первая реакция на него - трепет и надежда: в корне слова есть «быть», то есть разрешить себе прожить свою суть полностью. Но если задержаться на нем подольше, появляется тревога, будто от тебя ждут чего-то грандиозного</p>
+      <p>Дарья предлагает «сдуть пыль» с этого слова, чтобы оно не превращалось в еще один проект перфекциониста с галочкой «реализованная личность»</p>
+    </div>
+    <p class="pull">Если вы действуете, прислушиваясь к своему импульсу, вы уже сбываетесь, в какой бы фазе ни находились</p>
+
+    <div class="cycle">
+      <svg viewBox="0 0 320 300" role="img" aria-label="Цикл сбывания: три фазы">
+        <circle class="ring" cx="160" cy="150" r="105"/>
+        <circle class="ring-flow" cx="160" cy="150" r="105"/>
+        <text class="center-t" x="160" y="140">в центре цикла</text>
+        <text class="center-b" x="160" y="162">действие</text>
+        <g class="node" data-i="0" tabindex="0" role="button" aria-label="Фаза 1: накопление">
+          <circle cx="160" cy="45" r="20"/><text class="n" x="160" y="45">1</text>
+        </g>
+        <text class="node-label" x="160" y="14">Накопление</text>
+        <g class="node" data-i="1" tabindex="0" role="button" aria-label="Фаза 2: проявление">
+          <circle cx="251" cy="202" r="20"/><text class="n" x="251" y="202">2</text>
+        </g>
+        <text class="node-label" x="264" y="248">Проявление</text>
+        <g class="node" data-i="2" tabindex="0" role="button" aria-label="Фаза 3: обновление">
+          <circle cx="69" cy="202" r="20"/><text class="n" x="69" y="202">3</text>
+        </g>
+        <text class="node-label" x="56" y="248">Обновление</text>
+      </svg>
+      <div class="phase-panel" aria-live="polite">
+        <p class="eyebrow" id="ph-eyebrow">Фаза 1 из 3</p>
+        <h3 id="ph-title">Накопление</h3>
+        <p id="ph-text"></p>
+        <div class="phase-btns" role="group" aria-label="Выбор фазы">
+          <button class="chipbtn" data-i="0" aria-pressed="true">Накопление</button>
+          <button class="chipbtn" data-i="1" aria-pressed="false">Проявление</button>
+          <button class="chipbtn" data-i="2" aria-pressed="false">Обновление</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card c-m"><span class="tag">Первое условие</span><h3>Внутренняя безопасность</h3><p>Сбываться получается там, где внутри есть ощущение безопасности. Задача того, кто хочет сбываться - создавать себе эти условия</p></div>
+      <div class="card c-b"><span class="tag">Ловушка</span><h3>Достигаторская стратегия</h3><p>Цели «от ума», к которым идут любой ценой, переступая через себя. На финише часто ждет не удовлетворение, а пустота</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="acorn">
+  <div class="wrap stack">
+    <div class="sec-head"><p class="eyebrow">Часть 2</p><h2>Желудь и дуб: как жаль сбываться не в своем</h2></div>
+    <div class="prose">
+      <p>Дарья опирается на книгу Карен Хорни «Невроз и личностный рост». Желудь нельзя научить стать дубом, сколько ни старайся. Но если создать ему правильные условия, он вырастет в дуб сам, потому что это в нем заложено</p>
+      <p>Так и с человеком: у каждого есть природный потенциал. Ему мешают не внешние обстоятельства, а внутренние преграды</p>
+    </div>
+    <div class="compare">
+      <div class="card c-l"><span class="tag">Идеальное «я»</span><h3>Образ, созданный в детстве</h3><p>Чтобы нас любили, уважали, принимали. Потом мы всю жизнь стараемся ему соответствовать, и он заслоняет настоящего себя</p></div>
+      <div class="card c-m"><span class="tag">Реальное «я»</span><h3>То, что заложено в нас</h3><p>Уходит вглубь, контакт с ним теряется. Психологическая работа помогает расчищать путь к нему, насколько это возможно</p></div>
+    </div>
+    <p class="pull">Иногда в терапии выясняется, что цель, с которой человек пришел, была «морковкой» идеального «я». Это горько, но это хорошая новость: человек готов к большей правде о себе</p>
+    <div class="prose">
+      <p>В экзистенциальной терапии похожее различение: <b>подлинное «я»</b>, связанное с живой частью человека, и <b>имиджевое «я»</b>, тот образ, который мы выбираем показывать. Без имиджевого «я» в обществе не обойтись. Но когда остается только оно, «красивый заборчик», за которым прячешься от стыда, удовлетворения в жизни мало и рано или поздно приходит тоска: «А я-то про что?»</p>
+      <p>Гарантий, что встреча с реальным «я» случится полностью, нет. Ценность в самом пути и в намерении убирать преграды: чем меньше шелухи, тем правдивее и энергичнее прорастают желания</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="mine">
+  <div class="wrap stack">
+    <div class="sec-head"><p class="eyebrow">Часть 3</p><h2>Три вопроса, чтобы понять, что мое</h2><p class="note">Задавайте их по порядку. Ответы можно записать прямо здесь, они сохранятся только в вашем браузере</p></div>
+
+    <div class="q open" data-q="1">
+      <button class="q-head" aria-expanded="true"><span class="q-num">1</span><span class="q-title">Что мне по-настоящему нравится?</span><span class="q-sign" aria-hidden="true">+</span></button>
+      <div class="q-body">
+        <p>С этого все начинается. Вопрос кажется очевидным, но честно ответить на него непросто: легко взять шаблон из соцсетей или у друзей. Ищите то, от чего вы забываете о времени и усталости. То, что нравится, почти всегда указывает на ваши способности</p>
+        <p class="ex">Ориентир - состояние потока по Чиксентмихайи: ощущение, что можешь делать это бесконечно, открывается второе дыхание. После устаешь физически, но чувствуешь глубокое удовлетворение</p>
+        <textarea id="ans1" placeholder="От чего я забываю о времени…"></textarea>
+      </div>
+    </div>
+
+    <div class="q" data-q="2">
+      <button class="q-head" aria-expanded="false"><span class="q-num">2</span><span class="q-title">Какие проблемы других людей мне нравится решать?</span><span class="q-sign" aria-hidden="true">+</span></button>
+      <div class="q-body" hidden>
+        <p>Важно задать этот вопрос <b>после</b> первого, не до. Он перекидывает мостик от хобби к делу. Пример Дарьи: любить готовить и кормить людей каждый день - разные вещи. Чувствую ли я удовлетворение от того, что я «кормилица»?</p>
+        <p class="ex">Это тема служения, тот самый компонент смысла, который люди ищут, когда не понимают, зачем просыпаются по утрам</p>
+        <textarea id="ans2" placeholder="Мне нравится помогать людям, когда они…"></textarea>
+      </div>
+    </div>
+
+    <div class="q" data-q="3">
+      <button class="q-head" aria-expanded="false"><span class="q-num">3</span><span class="q-title">Какую сложную сторону дела я готов(а) выдерживать?</span><span class="q-sign" aria-hidden="true">+</span></button>
+      <div class="q-body" hidden>
+        <p>У любого дела есть «темная сторона». Мастер педикюра часами работает в напряженной позе, юрист продирается через канцелярит, психолог выдерживает объем чужой боли. Если эта сторона вас не истощает, это сильный указатель, что дело ваше</p>
+        <p class="ex">Пример Дарьи: писать тексты и брать интервью было легко, а ежедневно обзванивать журналистов в роли пресс-секретаря - постоянное усилие над собой. А у других пиарщиков все наоборот</p>
+        <textarea id="ans3" placeholder="Трудная часть, которая меня не разрушает…"></textarea>
+      </div>
+    </div>
+    <p class="saved" id="savedNote" hidden>Сохранено в этом браузере</p>
+  </div>
+</section>
+
+<section class="block" id="check">
+  <div class="wrap stack">
+    <div class="sec-head"><p class="eyebrow">Интерактив</p><h2>Мое или не мое?</h2><p class="note">Подумайте о конкретном деле или проекте и отметьте то, что про него правда</p></div>
+    <div class="check">
+      <div class="col">
+        <h3>Похоже на свое место</h3>
+        <button class="sig mine" aria-pressed="false"><span class="box"></span>Забываю о времени, открывается второе дыхание</button>
+        <button class="sig mine" aria-pressed="false"><span class="box"></span>Бывает трудно, но это меня наполняет</button>
+        <button class="sig mine" aria-pressed="false"><span class="box"></span>Сложная сторона дела меня не истощает</button>
+        <button class="sig mine" aria-pressed="false"><span class="box"></span>Дается легко, хотя я склонен(на) это обесценивать</button>
+        <button class="sig mine" aria-pressed="false"><span class="box"></span>Мне нравится решать эту задачу для других людей</button>
+      </div>
+      <div class="col">
+        <h3>Похоже на чужое</h3>
+        <button class="sig notmine" aria-pressed="false"><span class="box"></span>Каждый раз приходится себя преодолевать</button>
+        <button class="sig notmine" aria-pressed="false"><span class="box"></span>После работы не просто устаю, а опустошаюсь</button>
+        <button class="sig notmine" aria-pressed="false"><span class="box"></span>Делаю, чтобы заслужить одобрение и соответствовать образу</button>
+        <button class="sig notmine" aria-pressed="false"><span class="box"></span>Достигаю целей, но удовлетворения нет</button>
+      </div>
+    </div>
+    <div class="verdict" aria-live="polite">
+      <b id="vTitle">Отметьте то, что откликается</b>
+      <p id="vText">Здесь появится короткое пояснение</p>
+      <div class="meter" aria-hidden="true"><i class="a" id="mA" style="width:0"></i><i class="b" id="mB" style="width:0"></i></div>
+      <p class="note">Это ориентиры из разговора, а не тест и не диагностика</p>
+    </div>
+    <div class="card c-b">
+      <span class="tag">Не перепутать</span>
+      <h3>«Что угодно, только не это»</h3>
+      <p>Когда сильно устал на текущей работе, хочется отвергнуть все целиком. Сначала стоит остыть. Скорее всего, найдется конкретная часть, с которой вы больше не хотите иметь дело, и навыки, которые остаются вашим активом. Дарья так «сбежала» от копирайтинга, а потом нашла в текстах новые роли: писать для себя и преподавать</p>
+    </div>
+    <div class="card c-m">
+      <span class="tag">Метод от противного</span>
+      <h3>Пробуйте и невкусное</h3>
+      <p>Если непонятно, чего хочется, начните отсеивать то, что точно не ваше. Это тоже поиск: рука в темном мешке постепенно нащупывает нужный предмет</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="block">
+  <div class="wrap stack">
+    <div class="sec-head"><p class="eyebrow">Часть 4</p><h2>Что мешает сбываться</h2></div>
+    <div class="prose">
+      <p>Мы редко говорим себе «мне страшно». Чаще мы объясняем, почему не сейчас. За такими объяснениями нередко стоят страх и стыд: сделать шаг значит рискнуть идеальным «я», а предъявить, кроме него, кажется нечего</p>
+    </div>
+    <p class="eyebrow">Нажмите на фразу, чтобы увидеть, что может стоять за ней</p>
+    <div class="rats">
+      <div class="rat">
+        <button class="rat-head" aria-expanded="false"><span class="say">«Я еще недостаточно готова»</span><span class="rat-cue">Что за этим<span class="sign" aria-hidden="true">+</span></span></button>
+        <div class="rat-body" hidden><p>Страх, что оценят и сочтут недостаточно хорошей. Пока не показываешь, образ остается в безопасности</p></div>
+      </div>
+      <div class="rat">
+        <button class="rat-head" aria-expanded="false"><span class="say">«Проект еще сырой»</span><span class="rat-cue">Что за этим<span class="sign" aria-hidden="true">+</span></span></button>
+        <div class="rat-body" hidden><p>Перфекционизм как защита: ждать идеала проще, чем получить обратную связь на несовершенное</p></div>
+      </div>
+      <div class="rat">
+        <button class="rat-head" aria-expanded="false"><span class="say">«Сначала надо разобраться с другим»</span><span class="rat-cue">Что за этим<span class="sign" aria-hidden="true">+</span></span></button>
+        <div class="rat-body" hidden><p>Избегание сложного чувства. Само по себе это не плохо, но полезно заметить, от чего именно бережешь себя</p></div>
+      </div>
+      <div class="rat">
+        <button class="rat-head" aria-expanded="false"><span class="say">«Нет времени: дети, секции, дела»</span><span class="rat-cue">Что за этим<span class="sign" aria-hidden="true">+</span></span></button>
+        <div class="rat-body" hidden><p>Рационализация. Обстоятельства реальны, но иногда за ними удобно спрятать стыд и страх проявиться</p></div>
+      </div>
+    </div>
+    <p class="pull">Просто опознать, что вы чего-то боитесь - уже большой шаг</p>
+    <div class="grid2">
+      <div class="card c-l"><span class="tag">Стыд</span><h3>Скрученный листок</h3><p>Стыд парализует: сбываться значит выйти наружу и показаться. Красивый, талантливый человек будто сворачивается внутрь. Снаружи этот листок не разгладить, но можно быть рядом и создавать среду. Стыд - социальная эмоция, и исцеляется он в присутствии другого</p></div>
+      <div class="card c-b"><span class="tag">Обесценивание</span><h3>Топливо под рукой</h3><p>Мы обесцениваем то, что дается легко, и отмахиваемся от добрых слов. А ведь легкость - прямая подсказка к потоку, а признание - топливо для следующего шага</p></div>
+    </div>
+    <div class="card c-m">
+      <span class="tag">Когда нужна помощь</span>
+      <h3>Если даже маленький шаг невозможен</h3>
+      <p>Когда стыда очень много, сделать даже крошечный шаг вовне трудно. Тогда сначала нужна психотерапия: она помогает разжать внутренние тиски и дать ощущение безопасности, из которого шаг становится возможным</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="help">
+  <div class="wrap stack">
+    <div class="sec-head"><p class="eyebrow">Часть 5</p><h2>Что помогает: практики из выпуска</h2><p class="note">Отметьте то, что хотите попробовать на этой неделе</p></div>
+    <div>
+      <div class="practice"><div class="ic c-m">→</div><div>
+        <h3>Сократить дистанцию между мыслью и действием</h3>
+        <p>Сразу делать что-то очень дешевое по ресурсам: написать, позвонить, спросить, набросать абзац. Задача меняет статус с «подумала» на «сделала». Лучше всего, если это контакт с живыми людьми</p>
+        <button class="mark" data-k="p1" aria-pressed="false">Попробую</button></div></div>
+      <div class="practice"><div class="ic c-l">?</div><div>
+        <h3>Цель «собрать данные» вместо «доказать, что я молодец»</h3>
+        <p>Пост пишется не ради одобрения, а чтобы узнать правду, получить отклик. Это позиция Взрослого из транзактного анализа: тревога не исчезнет полностью, но испуганной детской части станет легче</p>
+        <button class="mark" data-k="p2" aria-pressed="false">Попробую</button></div></div>
+      <div class="practice"><div class="ic c-b">⇄</div><div>
+        <h3>Договориться с кем-то: формат «бади»</h3>
+        <p>Если перед другими отвечать легче, чем перед собой, используйте это. Например, раз в неделю созваниваться с коллегой и рассказывать, кто что сделал</p>
+        <button class="mark" data-k="p3" aria-pressed="false">Попробую</button></div></div>
+      <div class="practice"><div class="ic c-m">◐</div><div>
+        <h3>Маленькие проверки гипотез в безопасной среде</h3>
+        <p>Опыт «я ошибся и не развалился» появляется только если позволить себе его получать. Сначала бережная среда, где критика уважительна. Окрепнув, можно идти в профессиональное сообщество</p>
+        <button class="mark" data-k="p4" aria-pressed="false">Попробую</button></div></div>
+      <div class="practice"><div class="ic c-l">◯</div><div>
+        <h3>Открыть дверь добрым словам</h3>
+        <p>Принимать позитивную обратную связь, не отмахиваясь и не оправдываясь. Ритуал подруги Дарьи: в день рождения прочитать каждое поздравление и «разместить» его внутри себя. Представьте, что в сердце есть дверь, и скажите: «Заходите»</p>
+        <p class="try"><b>Если совсем не получается</b>, это хороший повод разобраться с психологом, что запрещает думать о себе хорошо</p>
+        <button class="mark" data-k="p5" aria-pressed="false">Попробую</button></div></div>
+      <div class="practice"><div class="ic c-b">✦</div><div>
+        <h3>Дать место игре</h3>
+        <p>Актерский тренинг, импровизация, клоунада. Игра приглашает живую внутреннюю часть, ту самую, что делает нас живыми, и позволяет прожить стыд с юмором</p>
+        <button class="mark" data-k="p6" aria-pressed="false">Попробую</button></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="age">
+  <div class="wrap stack">
+    <div class="sec-head"><p class="eyebrow">Часть 6</p><h2>Про возраст: не поздно и не рано</h2></div>
+    <div class="grid2">
+      <div class="card c-b"><span class="tag">30-40 и позже</span><h3>Кризис - это начало</h3><p>Пока живешь по социальной программе (ипотека, семья, дети), услышать свои желания некогда. Если в 30 вы вдруг начали задавать себе эти вопросы, это успех, а не опоздание. Кто-то приходит к ним позже, когда «больше никому не должен», и это тоже точка входа</p></div>
+      <div class="card c-l"><span class="tag">20-25</span><h3>Дать себе подрасти</h3><p>У молодых людей бывает очень высокий уровень притязаний к себе. Жадность к поиску вдохновляет, но важно позволить себе узнать себя и посмотреть, «каким цветом я цвету». Опыт нарастает постепенно</p></div>
+    </div>
+    <div class="prose">
+      <p>Растительная метафора проходит через весь выпуск. Семечко в земле уже существует, но его не видно. Росток с двумя листиками пока неясно, укроп это или елка. В начале дело важно только вам, и нужно много поддержки и решимости, чтобы быть себе садовником. А потом непонятно, кто кого вырастил: вы дело или дело вас</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="quotes">
+  <div class="wrap stack">
+    <div class="sec-head"><p class="eyebrow">Цитаты из выпуска</p><h2>Что взять с собой</h2></div>
+    <div class="quotes">
+      <blockquote class="c-m"><p>Позвольте себе быть тихо втянутым в поток того, что вы любите. Он не обманет</p><cite>Руми · в пересказе Дарьи</cite></blockquote>
+      <blockquote class="c-l"><p>Миру нужны живые люди. Занимайтесь тем, что делает вас живыми</p><cite>Брене Браун · в пересказе Дарьи</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="sum">
+  <div class="wrap stack">
+    <div class="sec-head"><p class="eyebrow">Коротко</p><h2>Главное из выпуска</h2></div>
+    <ol class="takeaways">
+      <li><span>Сбываться - процесс, а не финиш. Вы сбываетесь в любой фазе, если действуете</span></li>
+      <li><span>Первое условие - внутренняя безопасность, а не сила воли</span></li>
+      <li><span>Не все цели наши: часть из них выращивает идеальное «я». Обнаружить это горько, но это шаг к большей правде</span></li>
+      <li><span>Три вопроса: что мне нравится, какие проблемы людей мне нравится решать, какую сложную сторону дела я выдерживаю</span></li>
+      <li><span>За «не готова» и «нет времени» часто стоят страх и стыд. Заметить это - уже движение</span></li>
+      <li><span>Маленькие шаги, бади, безопасная среда и умение принимать добрые слова помогают перевести идею в действие</span></li>
+    </ol>
+  </div>
+</section>
+</main>
+
+<section class="cta" id="cta">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--cta-muted)">Следующий шаг</p>
+    <h2>Хочется сбываться, но что-то останавливает?</h2>
+    <p>Если вы спотыкаетесь о сомнения, страх или неловкость, ищете свое направление, задумываете профессиональный переход или хотите наконец запустить свою идею, с этим можно обратиться к специалисту</p>
+    <div class="cta-cards">
+      <a class="cta-card primary" href="https://intreatment.online" target="_blank" rel="noopener">
+        <span class="t">Подобрать психолога</span>
+        <span class="d">Платформа InTreatment: специалисты по самореализации, кризисам и переменам в жизни</span>
+        <span class="go">intreatment.online <span>↗</span></span>
+      </a>
+      <a class="cta-card" href="https://t.me/Intreatmentpsy_bot" target="_blank" rel="noopener">
+        <span class="t">Написать в Telegram-бот</span>
+        <span class="d">Выберите тему «Самореализация» и запишитесь на консультацию в пару касаний</span>
+        <span class="go">@Intreatmentpsy_bot <span>↗</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+<footer class="foot">
+  <div class="wrap"><span>Подкаст психологического центра InTreatment</span><span>Выпуск «Хочу сбываться»</span></div>
+</footer>
+
+<script>
+(function(){
+  var store={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+  /* phases */
+  var phases=[
+    {t:"Накопление",x:"Вы делаете то, что пока не видно окружающим. Дело важно только вам, никто не знает, сколько сил вы вкладываете, плодов и признания еще нет. Это уже сбывание"},
+    {t:"Проявление",x:"Результаты становятся заметны вам и другим. Появляется профессиональный вес, отклик, ощущение смысла. Сколько идти до этой фазы, заранее неизвестно"},
+    {t:"Обновление",x:"Хочется делать по-новому и открывать другой путь. Снова учеба, паузы без ответов, которые мы часто воспринимаем как кризис. И цикл начинается снова"}
+  ];
+  var nodes=[].slice.call(document.querySelectorAll('.node')),chips=[].slice.call(document.querySelectorAll('.chipbtn'));
+  function setPhase(i){
+    document.getElementById('ph-eyebrow').textContent='Фаза '+(i+1)+' из 3';
+    document.getElementById('ph-title').textContent=phases[i].t;
+    document.getElementById('ph-text').textContent=phases[i].x;
+    nodes.forEach(function(n){n.classList.toggle('on',+n.dataset.i===i)});
+    chips.forEach(function(c){c.setAttribute('aria-pressed',+c.dataset.i===i?'true':'false')});
+  }
+  nodes.forEach(function(n){
+    n.addEventListener('click',function(){setPhase(+n.dataset.i)});
+    n.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();setPhase(+n.dataset.i)}});
+  });
+  chips.forEach(function(c){c.addEventListener('click',function(){setPhase(+c.dataset.i)})});
+  setPhase(0);
+
+  /* questions accordion */
+  document.querySelectorAll('.q').forEach(function(q){
+    var b=q.querySelector('.q-head'),body=q.querySelector('.q-body');
+    b.addEventListener('click',function(){
+      var open=!q.classList.contains('open');
+      q.classList.toggle('open',open);body.hidden=!open;b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+  var note=document.getElementById('savedNote'),t;
+  ['ans1','ans2','ans3'].forEach(function(id){
+    var el=document.getElementById(id),v=store.get('sbyv_'+id);if(v)el.value=v;
+    el.addEventListener('input',function(){store.set('sbyv_'+id,el.value);note.hidden=false;clearTimeout(t);t=setTimeout(function(){note.hidden=true},1600)});
+  });
+
+  /* self-check */
+  var sigs=[].slice.call(document.querySelectorAll('.sig'));
+  function verdict(){
+    var a=sigs.filter(function(s){return s.classList.contains('mine')&&s.getAttribute('aria-pressed')==='true'}).length;
+    var b=sigs.filter(function(s){return s.classList.contains('notmine')&&s.getAttribute('aria-pressed')==='true'}).length;
+    var tot=a+b,T=document.getElementById('vTitle'),X=document.getElementById('vText');
+    document.getElementById('mA').style.width=tot?(a/tot*100)+'%':'0';
+    document.getElementById('mB').style.width=tot?(b/tot*100)+'%':'0';
+    if(!tot){T.textContent='Отметьте то, что откликается';X.textContent='Здесь появится короткое пояснение';return}
+    if(a>0&&b===0){T.textContent='Похоже, вы на своем месте';X.textContent='Здесь вы скорее наполняетесь, чем тратитесь. Стоит беречь это дело и давать ему расти'}
+    else if(b>0&&a===0){T.textContent='Похоже, здесь много преодоления';X.textContent='Возможно, это дело не про вас или про какую-то его часть. Попробуйте определить, что именно истощает, и не отбрасывайте навыки, которые остаются вашим активом'}
+    else if(a>=b){T.textContent='В этом много своего';X.textContent='Но есть и то, что истощает. Посмотрите, можно ли сместить фокус на ту часть дела, где возникает поток'}
+    else{T.textContent='Свое здесь есть, но его заслоняет усилие';X.textContent='Полезно разобраться, где вы идете за своим интересом, а где за образом, которому стараетесь соответствовать'}
+  }
+  sigs.forEach(function(s){s.addEventListener('click',function(){s.setAttribute('aria-pressed',s.getAttribute('aria-pressed')==='true'?'false':'true');verdict()})});
+
+  /* rationalizations */
+  document.querySelectorAll('.rat').forEach(function(r){
+    var b=r.querySelector('.rat-head'),body=r.querySelector('.rat-body');
+    b.addEventListener('click',function(){
+      var open=!r.classList.contains('open');
+      r.classList.toggle('open',open);body.hidden=!open;b.setAttribute('aria-expanded',open?'true':'false');
+    });
+  });
+
+  /* practice marks */
+  document.querySelectorAll('.mark').forEach(function(m){
+    var k='sbyv_'+m.dataset.k;
+    function paint(on){m.setAttribute('aria-pressed',on?'true':'false');m.textContent=on?'✓ В планах':'Попробую'}
+    paint(store.get(k)==='1');
+    m.addEventListener('click',function(){var on=m.getAttribute('aria-pressed')!=='true';paint(on);store.set(k,on?'1':'0')});
+  });
+
+  /* progress + toc */
+  var bar=document.getElementById('bar'),links=[].slice.call(document.querySelectorAll('.toc a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
+  function onScroll(){
+    var h=document.documentElement,max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?h.scrollTop/max*100:0)+'%';
+    var cur=-1;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<140)cur=i});
+    links.forEach(function(a,i){a.classList.toggle('on',i===cur)});
+    if(cur>=0){var a=links[cur],w=a.parentNode;var l=a.offsetLeft-16;if(l<w.scrollLeft||l+a.offsetWidth>w.scrollLeft+w.clientWidth)w.scrollTo({left:l,behavior:'smooth'})}
+  }
+  var toc=document.querySelector('.toc'),tw=toc.querySelector('.wrap');
+  function fit(){toc.classList.toggle('scrolls',tw.scrollWidth>tw.clientWidth+1)}
+  window.addEventListener('resize',fit);fit();
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+})();
+</script>
+
+</body>
+</html>
